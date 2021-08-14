@@ -33,29 +33,29 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
-      - name: West Build (Helix Left)
-        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=helix_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Helix DTS File
+      - name: West Build (Levinson Left)
+        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=levinson_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+      - name: Levinson DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/nice_nano_v2.dts.pre.tmp
-      - name: Helix Left Kconfig file
+      - name: Levinson Left Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 helix_left_nice_nano_v2.uf2
-      - name: Archive (Helix Left)
+        run: cp build/zephyr/zmk.uf2 levinson_left_nice_nano_v2.uf2
+      - name: Archive (Levinson Left)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: helix_left_nice_nano_v2.uf2
-      - name: West Build (Helix Right)
-        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=helix_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+          path: levinson_left_nice_nano_v2.uf2
+      - name: West Build (Levinson Right)
+        run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=levinson_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
-      - name: Helix Right Kconfig file
+      - name: Levinson Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 helix_right_nice_nano_v2.uf2
-      - name: Archive (Helix Right)
+        run: cp build/zephyr/zmk.uf2 levinson_right_nice_nano_v2.uf2
+      - name: Archive (Levinson Right)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: helix_right_nice_nano_v2.uf2
+          path: levinson_right_nice_nano_v2.uf2
