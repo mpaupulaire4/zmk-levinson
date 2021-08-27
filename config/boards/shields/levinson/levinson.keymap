@@ -32,7 +32,7 @@ As such, those are in use within the default layer at this time.*/
  // |  CTRL  |  UTL   |  ALT   |  LGUI  | LOWER  | SPACE  | SPACE  |  RAISE |  LEFT  |  DOWN  |  UTL   |  CTRL  |
                      bindings = <
        &kp ESC    &kp Q   &kp W    &kp E    &kp R     &kp T     &kp Y     &kp U     &kp I     &kp O      &kp P     &kp BSPC
-       &kp TAB    &kp A   &kp S    &kp D    &kp F     &kp G     &kp H     &kp J     &kp K     &kp L      &kp SEMI  &kp RET
+       &kp TAB    &kp D   &kp S    &kp D    &kp F     &kp G     &kp H     &kp J     &kp K     &kp L      &kp SEMI  &kp RET
        &kp LSHFT  &kp Z   &kp X    &kp C    &kp V     &kp B     &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH &kp RSHFT
        &kp LCTRL  &mo UTL &kp LALT &kp LGUI &mo LOWER &kp SPACE &kp SPACE &mo RAISE &kp LEFT  &kp DOWN   &mo UTL   &kp RCTRL
                      >;
